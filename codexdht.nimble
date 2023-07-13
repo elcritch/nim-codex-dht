@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.3.0"
+version       = "0.3.1"
 author        = "Status Research & Development GmbH"
 description   = "DHT based on the libp2p Kademlia spec"
 license       = "MIT"
@@ -25,6 +25,9 @@ requires "questionable"
 
 task testAll, "Run DHT tests":
   exec "nim c -r tests/testAll.nim"
+
+task test, "Run DHT tests":
+  exec "nim c -r --verbosity:0 tests/testAllParallel.nim"
 
 # task coverage, "generates code coverage report":
 #   var (output, exitCode) = gorgeEx("which lcov")
